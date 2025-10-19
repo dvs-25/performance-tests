@@ -148,7 +148,7 @@ activemq-data/
 *.sage.py
 
 # Environments
-#.env
+.env
 .envrc
 .venv
 env/
@@ -226,3 +226,9 @@ coverage-report.json
 coverage-history.json
 
 .DS_Store
+
+# locust
+dumps
+locust_*.csv
+locust_*.json
+report.html
