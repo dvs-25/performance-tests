@@ -1,6 +1,5 @@
 from locust import TaskSet, SequentialTaskSet
 
-# Импортируем типы и билдеры для построения HTTP API клиентов
 from clients.http.gateway.accounts.client import AccountsGatewayHTTPClient, build_accounts_gateway_locust_http_client
 from clients.http.gateway.cards.client import CardsGatewayHTTPClient, build_cards_gateway_locust_http_client
 from clients.http.gateway.documents.client import (
@@ -22,7 +21,6 @@ class GatewayHTTPTaskSet(TaskSet):
     Используется, если порядок выполнения задач внутри таск-сета не имеет значения.
     """
 
-    # Аннотации полей с клиентами (появятся в self после on_start)
     users_gateway_client: UsersGatewayHTTPClient
     cards_gateway_client: CardsGatewayHTTPClient
     accounts_gateway_client: AccountsGatewayHTTPClient

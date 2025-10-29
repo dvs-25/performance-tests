@@ -2,10 +2,7 @@ from pydantic import BaseModel, HttpUrl
 
 
 class HTTPClientConfig(BaseModel):
-    # URL сервиса, к которому будем подключаться через httpx
     url: HttpUrl
-
-    # Таймаут для запросов в секундах (по умолчанию 100)
     timeout: float = 100.0
 
     @property
@@ -19,5 +16,3 @@ class HTTPClientConfig(BaseModel):
         - Если передать HttpUrl напрямую, будет ошибка типов.
         """
         return str(self.url)
-
-

@@ -123,5 +123,4 @@ class Fake:
         return self.float(1, 1000)
 
 
-# Создаем экземпляр класса Fake с использованием Faker
 fake = Fake(faker=Faker())

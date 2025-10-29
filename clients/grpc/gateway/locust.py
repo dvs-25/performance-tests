@@ -1,6 +1,5 @@
 from locust import TaskSet, SequentialTaskSet
 
-# Импортируем типы и билдеры для построения HTTP API клиентов
 from clients.grpc.gateway.accounts.client import AccountsGatewayGRPCClient, build_accounts_gateway_locust_grpc_client
 from clients.grpc.gateway.cards.client import CardsGatewayGRPCClient, build_cards_gateway_locust_grpc_client
 from clients.grpc.gateway.documents.client import (
@@ -22,7 +21,6 @@ class GatewayGRPCTaskSet(TaskSet):
     Используется, если порядок выполнения задач внутри таск-сета не имеет значения.
     """
 
-    # Аннотации полей с клиентами (появятся в self после on_start)
     users_gateway_client: UsersGatewayGRPCClient
     cards_gateway_client: CardsGatewayGRPCClient
     accounts_gateway_client: AccountsGatewayGRPCClient

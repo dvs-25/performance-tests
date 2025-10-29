@@ -3,8 +3,6 @@ from typing import Any, TypedDict
 from httpx import Client, Response, QueryParams, URL
 
 
-# Тип расширений, которые можно передать в запрос
-# В нашем случае мы используем только параметр "route", но можно добавить и другие
 class HTTPClientExtensions(TypedDict, total=False):
     route: str
 

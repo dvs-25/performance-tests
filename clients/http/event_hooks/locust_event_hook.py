@@ -30,31 +30,25 @@ def locust_response_event_hook(environment: Environment):
         exception: HTTPError | HTTPStatusError | None = None
 
         try:
-            # Проверка на статус ошибки (например, 500, 404 и т.д.)
             response = response.raise_for_status()
         except (HTTPError, HTTPStatusError) as error:
             exception = error
 
         request = response.request
 
-        # Получаем route, если он был передан через extensions, иначе используем raw path
         route = request.extensions.get("route", request.url.path)
-        # Время начала запроса, установленное в request event hook
         start_time = request.extensions.get("start_time", time.time())
-        # Вычисляем длительность запроса в миллисекундах
         response_time = (time.time() - start_time) * 1000
-        # Определяем размер тела ответа (можно заменить на 0, если не нужно)
         response_length = len(response.read())
 
-        # Отправляем событие в Locust
         environment.events.request.fire(
-            name=f"{request.method} {route}",  # Имя запроса (метод + логическое имя маршрута)
-            context=None,  # Контекст (опционально, можно использовать для расширений)
-            response=response,  # Объект ответа (опционально)
-            exception=exception,  # Исключение, если оно произошло
-            request_type="HTTP",  # Тип запроса (может быть любым: HTTP, gRPC, DB и т.д.)
-            response_time=response_time,  # Время выполнения запроса в мс
-            response_length=response_length,  # Размер тела ответа
+            name=f"{request.method} {route}",
+            context=None,
+            response=response,
+            exception=exception,
+            request_type="HTTP",
+            response_time=response_time,
+            response_length=response_length,
         )
 
     return inner

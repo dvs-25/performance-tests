@@ -16,9 +16,9 @@ class ExistingUserGetDocumentsSeedsScenario(SeedsScenario):
         """
         return SeedsPlan(
             users=SeedUsersPlan(
-                count=100,  # Создаём 100 пользователей
-                savings_accounts=SeedAccountsPlan(count=1),  # Сберегательный счёт на пользователя
-                debit_card_accounts=SeedAccountsPlan(count=1)  # Дебетовый счёт на пользователя
+                count=100,
+                savings_accounts=SeedAccountsPlan(count=1),
+                debit_card_accounts=SeedAccountsPlan(count=1)
             ),
         )
 
@@ -37,4 +37,4 @@ if __name__ == '__main__':
     Создаём объект сценария и вызываем метод build для создания данных.
     """
     seeds_scenario = ExistingUserGetDocumentsSeedsScenario()
-    seeds_scenario.build()  # Запуск сидинга
+    seeds_scenario.build()

@@ -1,6 +1,6 @@
 from locust import User, between
 
-from config import settings  # ← импорт глобального объекта настроек
+from config import settings
 
 
 class LocustBaseUser(User):

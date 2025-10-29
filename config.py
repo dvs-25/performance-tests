@@ -37,5 +37,4 @@ class Settings(BaseSettings):
     gateway_grpc_client: GRPCClientConfig  # Настройки gRPC-клиента
 
 
-# Глобальный объект настроек — его можно импортировать в любом месте проекта
 settings = Settings()

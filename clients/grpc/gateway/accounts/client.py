@@ -116,7 +116,7 @@ def build_accounts_gateway_grpc_client() -> AccountsGatewayGRPCClient:
     """
     return AccountsGatewayGRPCClient(channel=build_gateway_grpc_client())
 
-# Новый билдер для нагрузочного тестирования
+
 def build_accounts_gateway_locust_grpc_client(environment: Environment) -> AccountsGatewayGRPCClient:
     """
     Функция создаёт экземпляр AccountsGatewayGRPCClient адаптированного под Locust.

@@ -5,6 +5,7 @@ from clients.http.gateway.locust import GatewayHTTPSequentialTaskSet
 from clients.http.gateway.users.schema import CreateUserResponseSchema
 from tools.locust.user import LocustBaseUser
 
+
 class GetDocumentsSequentialTaskSet(GatewayHTTPSequentialTaskSet):
     """
     Нагрузочный сценарий, который последовательно:

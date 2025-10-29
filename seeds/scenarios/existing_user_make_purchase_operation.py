@@ -17,10 +17,10 @@ class ExistingUserMakePurchaseOperationSeedsScenario(SeedsScenario):
         """
         return SeedsPlan(
             users=SeedUsersPlan(
-                count=300,  # Количество пользователей
+                count=300,
                 credit_card_accounts=SeedAccountsPlan(
-                    count=1,  # Количество счётов на пользователя
-                    physical_cards=SeedCardsPlan(count=1)  # Количество физических карт
+                    count=1,
+                    physical_cards=SeedCardsPlan(count=1)
                 )
             ),
         )
@@ -34,6 +34,5 @@ class ExistingUserMakePurchaseOperationSeedsScenario(SeedsScenario):
 
 
 if __name__ == '__main__':
-    # Если файл запускается напрямую, создаём объект сценария и запускаем его.
     seeds_scenario = ExistingUserMakePurchaseOperationSeedsScenario()
-    seeds_scenario.build()  # Стартуем процесс сидинга
+    seeds_scenario.build()

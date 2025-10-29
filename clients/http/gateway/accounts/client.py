@@ -122,7 +122,6 @@ def build_accounts_gateway_http_client() -> AccountsGatewayHTTPClient:
     return AccountsGatewayHTTPClient(client=build_gateway_http_client())
 
 
-# Новый билдер для нагрузочного тестирования
 def build_accounts_gateway_locust_http_client(environment: Environment) -> AccountsGatewayHTTPClient:
     """
     Функция создаёт экземпляр AccountsGatewayHTTPClient адаптированного под Locust.
