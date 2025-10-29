@@ -79,7 +79,7 @@ This project follows industry-standard best practices:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/performance-tests.git
+git clone https://github.com/dvs-25/performance-tests.git
 cd performance-tests
 ```
 
