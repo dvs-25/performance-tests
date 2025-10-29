@@ -148,7 +148,7 @@ activemq-data/
 *.sage.py
 
 # Environments
-.env
+#.env
 .envrc
 .venv
 env/
@@ -232,3 +232,9 @@ dumps
 locust_*.csv
 locust_*.json
 report.html
+
+examples/
+
+prompts/
+
+.ai-review.yaml
